@@ -106,8 +106,8 @@ let signalTrade = async data => {
         console.log(amount);
         try {
             let ticker = await binance.prices(coins[data.coin]);
-            // if(data.label == "B") buyCoin(coins[data.coin], amount, ticker[coins[data.coin]], "hVTm4iHS97ZD6KFakKSezhN4bcFAbS8Joz7CvTtJgxXl3C3txRd3tcSphYPl1gm5", "GzJUJXrHvfXsfnjOY00T9fZX6eQj9sXWyGtzEinO9YmspXjaLss9YQpObFRui3mn");
-            // if(data.label == "S") sellCoin(coins[data.coin], amount, ticker[coins[data.coin]], "hVTm4iHS97ZD6KFakKSezhN4bcFAbS8Joz7CvTtJgxXl3C3txRd3tcSphYPl1gm5", "GzJUJXrHvfXsfnjOY00T9fZX6eQj9sXWyGtzEinO9YmspXjaLss9YQpObFRui3mn");
+            if(data.label == "B") buyCoin(coins[data.coin], amount, ticker[coins[data.coin]], "hVTm4iHS97ZD6KFakKSezhN4bcFAbS8Joz7CvTtJgxXl3C3txRd3tcSphYPl1gm5", "GzJUJXrHvfXsfnjOY00T9fZX6eQj9sXWyGtzEinO9YmspXjaLss9YQpObFRui3mn");
+            if(data.label == "S") sellCoin(coins[data.coin], amount, ticker[coins[data.coin]], "hVTm4iHS97ZD6KFakKSezhN4bcFAbS8Joz7CvTtJgxXl3C3txRd3tcSphYPl1gm5", "GzJUJXrHvfXsfnjOY00T9fZX6eQj9sXWyGtzEinO9YmspXjaLss9YQpObFRui3mn");
         } catch (error) {
             console.log(error);
         }
