@@ -5,6 +5,10 @@ const Binance = require('node-binance-api');
 const binance = new Binance();
 const createHmac = require('crypto').createHmac;
 
+var fs = require('fs');
+var symbols = JSON.parse(fs.readFileSync('symbols.json', 'utf8'));
+console.log(symbols);
+
 const coins = {
     // bitcoin: "BTCUSDT",
     ethereum: "ETHUSDT",
@@ -100,6 +104,7 @@ let cancelExistingOrder = async coin =>{
 }
 
 let signalTrade = async data => {
+    data.coin = symbols[data.coin];
     if(Object.keys(coins).includes(data.coin)){
         await cancelExistingOrder(coins[data.coin]);
         let amount = await getWalletBalance(coins[data.coin], data.label);
